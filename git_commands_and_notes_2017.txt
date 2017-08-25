@@ -1,0 +1,64 @@
+##########################################################
+##########################################################
+# Maria Stalteri
+# 25/08/2017
+# git_commands_and_notes_2017.txt
+
+##########################################################
+##########################################################
+# Install git on Linux (Ubuntu) home directory:
+
+$ sudo apt-get install git
+
+# set up git with your user name:
+# replace 'yourusername' with your github user name
+$ git config --global user.name yourusername
+
+# keep email private
+# replace 'yourusername' with your github user name
+$ git config --global user.email yourusername@users.noreply.github.com
+
+# confirm that it has been set up correctly
+$ git config --global user.email yourusername@users.noreply.github.com
+
+# also check the online settings on the webpage,
+# see the online instructions.
+
+############################################################
+############################################################
+# Create a new github repository (directory): 
+
+# Login to your github repository online and create a new
+# repository (directory); 
+# This will have a README.md file;
+
+# Clone the repository from your github page on the web to the 
+# local computer, using the commandline:
+
+/home/user/local_git_directory$ git clone  \
+https://github.com/mastal/microbiome_analyses.git
+
+# copy files that you want to upload to the repository into
+# your local git directory:
+rsync -av /path/to/source/files /path/to/git/directory/microbiome_analyses/
+
+# Step 1: Stage the files for adding to git
+/home/user/local_git_directory/microbiome_analyses$ git add . 
+
+# Step 2: Commit the files that have been staged,
+#         adding a commit message.
+
+/home/user/local_git_directory/microbiome_analyses$ git commit -m \
+"Qiime installation notes."
+
+# Step 3: Push the changes to GitHub.
+#         origin is the git directory on the local computer,
+#         master is the online repository on github
+.
+/home/user/local_git_directory/microbiome_analyses$ git push origin master
+
+# You will be prompted for username and password.
+
+##############################################################
+##############################################################
+
